@@ -1,4 +1,6 @@
 import three = require('three');
+import mesh  = require('./mesh');
+
 
 class ComponentFlags {
     constructor(public uvs: boolean, public normals: boolean) {}
@@ -20,7 +22,7 @@ function componentsSpecified(componentsString): ComponentFlags {
     throw new Error('Error invalid face components:' + componentsString);
 }
 
-export function readObj(data: string) {
+export function readObj(data: string): mesh.Mesh {
     var vertices = [],
         uvs = [],
         faces = [],
@@ -40,11 +42,7 @@ export function readObj(data: string) {
             ))
         },
         'f': (...verts : string[]) => {
-            var face = {
-                vertices: [],
-                uvs: [],
-                normals: []
-            };
+            var face = new mesh.Face();
 
             if (components === null) {
                 components = componentsSpecified(verts[0]);
@@ -79,8 +77,5 @@ export function readObj(data: string) {
         }
     }
 
-    return {
-        vertices: vertices,
-        faces: faces
-    };
+    return new mesh.Mesh(vertices, faces);
 }
