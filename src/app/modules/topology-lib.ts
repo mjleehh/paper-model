@@ -1,25 +1,49 @@
-export = halfEdgeLib;
+export = topologyLib;
 
-module halfEdgeLib {
+module topologyLib {
+
+export class Topology {
+
+
+}
 
 class IdProvider {
     constructor() {
-        this.m_nextUnusedHalfEdgeId = 1;
+        this.m_nextAvailableHalfEdgeId = 1;
     }
 
     generateHalfEdgeId():number {
-        return this.m_nextUnusedHalfEdgeId++;
+        return this.m_nextAvailableHalfEdgeId++;
     }
 
-    private m_nextUnusedHalfEdgeId;
+    private m_nextAvailableHalfEdgeId;
 }
 
 class MeshImpl {
 
 }
 
-class Vertex {
+export class Vertex {
+
+    constructor(id:number, x:number, y:number, z:number) {
+        this.m_id = id;
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    get id() {
+        return this.m_id;
+    }
+
+    x:number;
+    y:number;
+    z:number;
     firstHalfEdge:Halfedge;
+
+    // private
+
+    m_id:number;
 }
 
 class Face {
