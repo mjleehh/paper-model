@@ -2,7 +2,7 @@
 
 import fs = require('fs');
 import readObj = require('./modules/read-obj');
-import halfedge = require('./modules/halfedge')
+import halfedge = require('./modules/create-topology')
 
 fs.readFile('src/resources/models/box.obj', {encoding: 'ascii'}, function(err, data) {
     if (err) {
@@ -13,5 +13,5 @@ fs.readFile('src/resources/models/box.obj', {encoding: 'ascii'}, function(err, d
     console.log(mesh.vertices)
     console.log(mesh.faces)
     console.log('//////////////////////////////')
-    halfedge.create(mesh);
+
 });
