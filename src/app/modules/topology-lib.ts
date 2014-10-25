@@ -3,24 +3,15 @@ export = topologyLib;
 module topologyLib {
 
 export class Topology {
-
-
+    vertices:Array<Vertex>;
+    halfEdges:Array<Halfedge>;
+    faces:Array<Face>;
 }
 
-class IdProvider {
-    constructor() {
-        this.m_nextAvailableHalfEdgeId = 1;
-    }
-
-    generateHalfEdgeId():number {
-        return this.m_nextAvailableHalfEdgeId++;
-    }
-
-    private m_nextAvailableHalfEdgeId;
-}
-
-class MeshImpl {
-
+export interface IdProvider {
+    generateVertexId():number;
+    generateHalfEdgeId():number;
+    generateFaceId():number;
 }
 
 export class Vertex {
@@ -30,6 +21,7 @@ export class Vertex {
         this.x = x;
         this.y = y;
         this.z = z;
+        this.firstHalfEdge = null;
     }
 
     get id() {
@@ -46,11 +38,22 @@ export class Vertex {
     m_id:number;
 }
 
-class Face {
-    firstHalfEdge:Halfedge;
+export export class Face {
+    constructor(id:number) {
+        this.m_id = id;
+    }
+
+    get id():number {
+        return this.m_id;
+    }
+
+    firstHalfEdge:Halfedge = null;
+
+    // private
+    private m_id;
 }
 
-class Halfedge {
+export class Halfedge {
     constructor(id:number) {
         this.m_id = id;
     }
