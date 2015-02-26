@@ -1,0 +1,20 @@
+{
+  "name": "paper-model",
+  "version": "0.0.1",
+  "description": "unfold geometry",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mjleehh/web-paper-model.git"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.11",
+    "gulp-mocha": "~2.0.0",
+    "gulp-jshint": "~1.9.2",
+    "gulp-jscs": "~1.4.0",
+    "webpack": "~1.5.3",
+    "jshint-stylish": "~1.0.0"
+  },
+  "dependencies": {
+    "vecks": "git+ssh://git@github.com:bjnortier/vecks.git"
+  }
+}
