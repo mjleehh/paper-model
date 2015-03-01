@@ -1,0 +1,52 @@
+{
+  "nodes": [
+    {
+      "value": "one",
+      "children": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "value": "two",
+      "children": [
+        4,
+        5
+      ]
+    },
+    {
+      "value": "three",
+      "children": null
+    },
+    {
+      "value": "four",
+      "children": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "value": "five",
+      "children": null
+    },
+    {
+      "value": "six",
+      "children": null
+    },
+    {
+      "value": "seven",
+      "children": null
+    },
+    {
+      "value": "eight",
+      "children": null
+    },
+    {
+      "value": "nine",
+      "children": null
+    }
+  ],
+  "rootNode": 0
+}

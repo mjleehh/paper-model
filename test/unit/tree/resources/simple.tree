@@ -1,0 +1,13 @@
+n one
+n two
+n three
+n four
+n five
+n six
+n seven
+n eight
+n nine
+
+c 0 1 2 3
+c 1 4 5
+c 3 6 7 8
