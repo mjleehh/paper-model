@@ -15,6 +15,9 @@
     "jshint-stylish": "~1.0.0"
   },
   "dependencies": {
-    "vecks": "git+ssh://git@github.com:bjnortier/vecks.git"
+    "vecks": "git+ssh://git@github.com:bjnortier/vecks.git",
+    "lodash": "~3.3.1",
+    "simplesets": "~1.2.0",
+    "chai": "~2.1.0"
   }
 }
