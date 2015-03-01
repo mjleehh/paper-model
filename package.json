@@ -12,7 +12,8 @@
     "gulp-jshint": "~1.9.2",
     "gulp-jscs": "~1.4.0",
     "webpack": "~1.5.3",
-    "jshint-stylish": "~1.0.0"
+    "jshint-stylish": "~1.0.0",
+    "run-sequence": "~1.0.2"
   },
   "dependencies": {
     "vecks": "git+ssh://git@github.com:bjnortier/vecks.git",

@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var runSequence = require('run-sequence');
 var path = require('path');
 var mocha = require('gulp-mocha');
 var jshint = require('gulp-jshint');
@@ -28,6 +29,8 @@ gulp.task('unit', function(){
         .pipe(mocha({}));
 });
 
-gulp.task('test', ['jshint', 'jscs', 'unit']);
+gulp.task('test', function(cb){
+    runSequence('jshint', 'jscs', 'unit', cb);
+});
 
 gulp.task('default', ['test']);
