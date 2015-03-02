@@ -2,7 +2,7 @@ var self = require('../../../index');
 var fs = require('fs');
 var expect = require('chai').expect;
 
-describe('read-tree', function(){
+describe('readTree', function(){
     it('fails if the tree is empty', function(){
         expect(function(){
             self.readTree('');

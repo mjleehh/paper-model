@@ -2,7 +2,7 @@ var self = require('../../../index');
 var fs = require('fs');
 var expect = require('chai').expect;
 
-describe('read-graph', function(){
+describe('readGraph', function(){
     it('reads an empty file', function(){
         var expectedResult = {
             nodes: [],
