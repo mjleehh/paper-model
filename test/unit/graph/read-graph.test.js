@@ -8,7 +8,7 @@ describe('readGraph', function(){
             nodes: [],
             edges: []
         };
-        var graph = self.readGraph('');
+        var graph = self.graph.readGraph('');
         expect(graph).to.be.eql(expectedResult);
     });
 
@@ -18,7 +18,7 @@ describe('readGraph', function(){
             edges: [[0, 1], [1, 2], [0, 2]]
         };
         var buffer = fs.readFileSync(__dirname + '/resources/cyclic.graph', {encoding: 'ascii'});
-        var graph = self.readGraph(buffer);
+        var graph = self.graph.readGraph(buffer);
         expect(graph).to.be.eql(expectedResult);
     });
 
@@ -28,7 +28,7 @@ describe('readGraph', function(){
             edges: [[0, 1], [1, 3], [3, 5], [1, 2], [2, 3], [4, 5], [0, 4], [0, 5], [1, 4]]
         };
         var buffer = fs.readFileSync(__dirname + '/resources/complex.graph', {encoding: 'ascii'});
-        var graph = self.readGraph(buffer);
+        var graph = self.graph.readGraph(buffer);
         expect(graph).to.be.eql(expectedResult);
     });
 });
