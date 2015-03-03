@@ -14,7 +14,19 @@ describe('readGraph', function(){
 
     it('reads cyclic graphs', function(){
         var expectedResult = {
-            nodes: ['one', 'two', 'three'],
+            nodes: [{
+                    value: 'one',
+                    edges: [0, 2]
+                },
+                {
+                    value: 'two',
+                    edges: [0, 1]
+                },
+                {
+                    value: 'three',
+                    edges: [1, 2]
+                }
+            ],
             edges: [[0, 1], [1, 2], [0, 2]]
         };
         var buffer = fs.readFileSync(__dirname + '/resources/cyclic.graph', {encoding: 'ascii'});
@@ -23,10 +35,7 @@ describe('readGraph', function(){
     });
 
     it('reads complex graphs', function(){
-        var expectedResult = {
-            nodes: ['one', 'two', 'three', 'four', 'five'],
-            edges: [[0, 1], [1, 3], [3, 5], [1, 2], [2, 3], [4, 5], [0, 4], [0, 5], [1, 4]]
-        };
+        var expectedResult = JSON.parse(fs.readFileSync(__dirname + '/resources/complex.json', {encoding: 'ascii'}));
         var buffer = fs.readFileSync(__dirname + '/resources/complex.graph', {encoding: 'ascii'});
         var graph = self.graph.readGraph(buffer);
         expect(graph).to.be.eql(expectedResult);
