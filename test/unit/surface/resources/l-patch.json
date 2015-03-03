@@ -1,0 +1,137 @@
+{
+  "vertices": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "firstHalfEdge": 3
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "firstHalfEdge": 2
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "firstHalfEdge": 6
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "firstHalfEdge": 0
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "firstHalfEdge": 1
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 0,
+      "firstHalfEdge": 5
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "firstHalfEdge": 8
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 0,
+      "firstHalfEdge": 9
+    }
+  ],
+  "halfEdges": [
+    {
+      "vertex": 3,
+      "face": 0,
+      "nextHalfEdge": 3,
+      "twin": 6
+    },
+    {
+      "vertex": 4,
+      "face": 0,
+      "nextHalfEdge": 0,
+      "twin": null
+    },
+    {
+      "vertex": 1,
+      "face": 0,
+      "nextHalfEdge": 1,
+      "twin": null
+    },
+    {
+      "vertex": 0,
+      "face": 0,
+      "nextHalfEdge": 2,
+      "twin": 9
+    },
+    {
+      "vertex": 4,
+      "face": 1,
+      "nextHalfEdge": 7,
+      "twin": null
+    },
+    {
+      "vertex": 5,
+      "face": 1,
+      "nextHalfEdge": 4,
+      "twin": null
+    },
+    {
+      "vertex": 2,
+      "face": 1,
+      "nextHalfEdge": 5,
+      "twin": 0
+    },
+    {
+      "vertex": 1,
+      "face": 1,
+      "nextHalfEdge": 6,
+      "twin": null
+    },
+    {
+      "vertex": 6,
+      "face": 2,
+      "nextHalfEdge": 11,
+      "twin": null
+    },
+    {
+      "vertex": 7,
+      "face": 2,
+      "nextHalfEdge": 8,
+      "twin": 3
+    },
+    {
+      "vertex": 4,
+      "face": 2,
+      "nextHalfEdge": 9,
+      "twin": null
+    },
+    {
+      "vertex": 3,
+      "face": 2,
+      "nextHalfEdge": 10,
+      "twin": null
+    }
+  ],
+  "faces": [
+    {
+      "firstHalfEdge": 3
+    },
+    {
+      "firstHalfEdge": 7
+    },
+    {
+      "firstHalfEdge": 11
+    }
+  ]
+}

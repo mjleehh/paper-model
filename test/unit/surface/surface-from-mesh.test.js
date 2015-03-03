@@ -9,7 +9,7 @@ describe('surfaceFromMesh', function(){
         var expectedResult = JSON.parse(fs.readFileSync(__dirname + '/resources/l-patch.json', {encoding: 'ascii'}));
         var buffer = fs.readFileSync(__dirname + '/resources/l-patch.obj', {encoding: 'ascii'});
         var mesh = self.mesh.readObj(buffer);
-        var surface = self.surfaceFromMesh(mesh);
+        var surface = self.surface.surfaceFromMesh(mesh);
         expect(surface).to.be.eql(expectedResult);
     });
 
@@ -17,7 +17,7 @@ describe('surfaceFromMesh', function(){
         var buffer = fs.readFileSync(__dirname + '/resources/non-manifold-extruded-t.obj', {encoding: 'ascii'});
         var mesh = self.mesh.readObj(buffer);
         expect(function(){
-            self.surfaceFromMesh(mesh);
+            self.surface.surfaceFromMesh(mesh);
         }).to.throw(Error);
     });
 });
