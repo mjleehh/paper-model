@@ -23,18 +23,7 @@ describe('Surface', function(){
 
     it('has edges', function(){
         var expectedResult = [
-            [null, 0],
-            [null, 1],
-            [null, 2],
-            [3, 4],
-            [3, 4],
-            [null, 5],
-            [6, 8],
-            [null, 7],
-            [6, 8],
-            [null, 9],
-            [null, 10],
-            [null, 11]
+            [0], [1], [2], [5], [7], [9], [10], [11], [3, 4], [6, 8]
         ];
         var buffer = fs.readFileSync(__dirname + '/resources/l-patch-2.surface', {encoding: 'ascii'});
         var surface = new self.surface.Surface(self.surface.readSurface(buffer));
