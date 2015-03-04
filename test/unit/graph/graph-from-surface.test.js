@@ -4,7 +4,7 @@ var expect = require('chai').expect;
 
 
 describe('graphFromSurface', function(){
-    it('reads an empty file', function(){
+    it('converts an empty surface', function(){
         var expectedResult = {
             nodes: [],
             edges: []
@@ -18,9 +18,22 @@ describe('graphFromSurface', function(){
         expect(graph).to.be.eql(expectedResult);
     });
 
-    it('reads a file', function(){
+    it('converts a simple surface', function(){
         var expectedResult = {
-            nodes: [0, 1, 2],
+            nodes: [
+                {
+                    value: 0,
+                    edges: [0, 1]
+                },
+                {
+                    value: 1,
+                    edges: [0]
+                },
+                {
+                    value: 2,
+                    edges: [1]
+                }
+            ],
             edges: [[0, 1], [0, 2]]
         };
         var buffer = fs.readFileSync(__dirname + '/resources/l-patch-2.surface', {encoding: 'ascii'});
