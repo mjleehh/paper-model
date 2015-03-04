@@ -9,7 +9,7 @@ describe('readTree', function(){
         }).to.throw(Error);
     });
 
-    it('reads cyclic graphs', function(){
+    it('reads simple trees', function(){
         var expectedResult = JSON.parse(fs.readFileSync(__dirname + '/resources/simple.json', {encoding: 'ascii'}));
         var buffer = fs.readFileSync(__dirname + '/resources/simple.tree', {encoding: 'ascii'});
         var tree = self.tree.readTree(buffer);

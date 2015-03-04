@@ -17,7 +17,7 @@
     },
     {
       "value": "three",
-      "children": null
+      "children": []
     },
     {
       "value": "four",
@@ -29,23 +29,23 @@
     },
     {
       "value": "five",
-      "children": null
+      "children": []
     },
     {
       "value": "six",
-      "children": null
+      "children": []
     },
     {
       "value": "seven",
-      "children": null
+      "children": []
     },
     {
       "value": "eight",
-      "children": null
+      "children": []
     },
     {
       "value": "nine",
-      "children": null
+      "children": []
     }
   ],
   "rootNode": 0
