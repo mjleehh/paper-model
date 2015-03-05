@@ -15,8 +15,8 @@ describe('writeObj', function(){
 
     it('writes a mesh', function(){
         var expectedResult = fs.readFileSync(__dirname + '/resources/box-plain.obj', {encoding: 'ascii'});
-        var inputData = fs.readFileSync(__dirname + '/resources/box.obj', {encoding: 'ascii'});
-        var mesh = self.mesh.readObj(inputData);
+        var mesh = JSON.parse(
+            fs.readFileSync(__dirname + '/resources/box.json', {encoding: 'ascii'}));
         var objData = self.mesh.writeObj(mesh);
         expect(objData).to.be.eql(expectedResult);
     });

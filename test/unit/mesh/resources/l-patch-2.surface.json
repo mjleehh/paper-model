@@ -1,0 +1,137 @@
+{
+  "vertices": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "firstHalfEdge": 0
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "firstHalfEdge": 1
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "firstHalfEdge": 5
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "firstHalfEdge": 2
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "firstHalfEdge": 6
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 0,
+      "firstHalfEdge": 7
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "firstHalfEdge": 9
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 0,
+      "firstHalfEdge": 11
+    }
+  ],
+  "halfEdges": [
+    {
+      "vertex": 1,
+      "nextHalfEdge": 3,
+      "face": 0,
+      "twin": null
+    },
+    {
+      "vertex": 2,
+      "nextHalfEdge": 5,
+      "face": 1,
+      "twin": null
+    },
+    {
+      "vertex": 0,
+      "nextHalfEdge": 0,
+      "face": 0,
+      "twin": null
+    },
+    {
+      "vertex": 4,
+      "nextHalfEdge": 6,
+      "face": 0,
+      "twin": 4
+    },
+    {
+      "vertex": 1,
+      "nextHalfEdge": 1,
+      "face": 1,
+      "twin": 3
+    },
+    {
+      "vertex": 5,
+      "nextHalfEdge": 7,
+      "face": 1,
+      "twin": null
+    },
+    {
+      "vertex": 3,
+      "nextHalfEdge": 2,
+      "face": 0,
+      "twin": 8
+    },
+    {
+      "vertex": 4,
+      "nextHalfEdge": 4,
+      "face": 1,
+      "twin": null
+    },
+    {
+      "vertex": 4,
+      "nextHalfEdge": 10,
+      "face": 2,
+      "twin": 6
+    },
+    {
+      "vertex": 3,
+      "nextHalfEdge": 8,
+      "face": 2,
+      "twin": null
+    },
+    {
+      "vertex": 7,
+      "nextHalfEdge": 11,
+      "face": 2,
+      "twin": null
+    },
+    {
+      "vertex": 6,
+      "nextHalfEdge": 9,
+      "face": 2,
+      "twin": null
+    }
+  ],
+  "faces": [
+    {
+      "firstHalfEdge": 0
+    },
+    {
+      "firstHalfEdge": 1
+    },
+    {
+      "firstHalfEdge": 8
+    }
+  ]
+}
