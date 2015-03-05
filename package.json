@@ -1,7 +1,7 @@
 {
   "name": "paper-model",
-  "version": "0.0.1",
-  "description": "unfold geometry",
+  "version": "0.1.0",
+  "description": "create a paper model from mesh geometry",
   "repository": {
     "type": "git",
     "url": "http://github.com/mjleehh/web-paper-model.git"
@@ -11,14 +11,14 @@
     "gulp-mocha": "~2.0.0",
     "gulp-jshint": "~1.9.2",
     "gulp-jscs": "~1.4.0",
-    "webpack": "~1.5.3",
+    "webpack": "~1.7.2",
     "jshint-stylish": "~1.0.0",
-    "run-sequence": "~1.0.2"
+    "run-sequence": "~1.0.2",
+    "chai": "~2.1.0",
+    "jquery": "~2.1.3"
   },
   "dependencies": {
-    "vecks": "git+ssh://git@github.com:bjnortier/vecks.git",
     "lodash": "~3.3.1",
-    "simplesets": "~1.2.0",
-    "chai": "~2.1.0"
+    "simplesets": "~1.2.0"
   }
 }

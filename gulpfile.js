@@ -4,6 +4,7 @@ var path = require('path');
 var mocha = require('gulp-mocha');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
+var webpack = require('webpack');
 
 
 var indexFile = 'index.html';
@@ -30,7 +31,34 @@ gulp.task('unit', function(){
 });
 
 gulp.task('test', function(cb){
-    runSequence('jshint', 'jscs', 'unit', cb);
+    runSequence('jshint', 'jscs', 'unit', 'webpack', cb);
+});
+
+function createWebpackResultFn(callback) {
+    return function(err, stats) {
+        if (err || (stats.hasErrors)) {
+            var errorMsg = err || stats.compilation.errors.join('\n');
+            callback(errorMsg);
+        } else {
+            callback();
+        }
+    };
+}
+
+gulp.task('webpack', function(callback) {
+    webpack({
+        entry: {
+            'create-paper-model': './test/functional/src/create-paper-model.js',
+            vendor: ['lodash']
+        },
+        output: {
+            path: 'test/functional/lib',
+            filename: '[name].bundle.js'
+        },
+        plugins: [
+            new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
+        ]
+    }, createWebpackResultFn(callback));
 });
 
 gulp.task('default', ['test']);
