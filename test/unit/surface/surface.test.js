@@ -3,6 +3,8 @@ var fs = require('fs');
 var expect = require('chai').expect;
 
 describe('Surface', function(){
+    // faces
+
     it('has a number of faces', function(){
         var buffer = fs.readFileSync(__dirname + '/resources/l-patch-2.surface', {encoding: 'ascii'});
         var surface = new self.surface.Surface(self.surface.readSurface(buffer));
@@ -11,13 +13,41 @@ describe('Surface', function(){
     });
 
     it('has single faces', function(){
-        //var expectedResult =
-        // JSON.parse(fs.readFileSync(__dirname + '/resources/l-patch-2.json', {encoding: 'ascii'}));
         var buffer = fs.readFileSync(__dirname + '/resources/l-patch-2.surface', {encoding: 'ascii'});
         var surface = new self.surface.Surface(self.surface.readSurface(buffer));
 
         for (var i = 0; i < surface.numFaces; ++i) {
             surface.getFace(i);
+        }
+    });
+
+    it('has faces', function(){
+        var expectedResult = [
+            {firstHalfEdge: 0},
+            {firstHalfEdge: 1},
+            {firstHalfEdge: 8}
+        ];
+        var buffer = fs.readFileSync(__dirname + '/resources/l-patch-2.surface', {encoding: 'ascii'});
+        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
+        var faces = surface.faces;
+        expect(faces).to.be.eql(expectedResult);
+    });
+
+    // edges
+
+    it('has a number of edges', function(){
+        var buffer = fs.readFileSync(__dirname + '/resources/l-patch-2.surface', {encoding: 'ascii'});
+        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
+        var numEdges = surface.numEdges;
+        expect(numEdges).to.be.eql(10);
+    });
+
+    it('has single edges', function(){
+        var buffer = fs.readFileSync(__dirname + '/resources/l-patch-2.surface', {encoding: 'ascii'});
+        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
+
+        for (var i = 0; i < surface.numEdges; ++i) {
+            surface.getEdge(i);
         }
     });
 
