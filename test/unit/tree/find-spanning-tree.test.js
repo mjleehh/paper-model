@@ -29,6 +29,15 @@ describe('findSpanningTree', function(){
         });
     });
 
+    it('fails if graph has disconnected components', function(){
+        expect(function(){
+            var graph = new self.graph.Graph(
+                self.graph.readGraph(fs.readFileSync(
+                    __dirname + '/resources/disconnected.graph', {encoding: 'ascii'})));
+            self.tree.findSpanningTree(graph);
+        }).to.throw(Error);
+    });
+
     it('converts cyclic graphs', function(){
         var expectedResult = self.tree.readTree(fs.readFileSync(
             __dirname + '/resources/cyclic.tree',
