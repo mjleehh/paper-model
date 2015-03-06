@@ -1,5 +1,4 @@
 var self = require('../../../index');
-//var _ = require('lodash');
 var fs = require('fs');
 var expect = require('chai').expect;
 

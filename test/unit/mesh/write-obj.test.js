@@ -1,4 +1,4 @@
-/*jshint -W030 */
+// jshint -W030
 var self = require('../../../index');
 var fs = require('fs');
 var expect = require('chai').expect;
