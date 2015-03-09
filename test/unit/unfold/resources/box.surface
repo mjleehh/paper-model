@@ -1,28 +1,28 @@
 # vertices
 
 # row 0
-v 0 2 0
-v 0 1 0
+v 0 2 0 3
+v 0 1 0 0
 
 # row 1
-v 1 3 0
-v 1 2 0
-v 1 1 0
-v 1 0 0
+v 1 3 0 7
+v 1 2 0 11
+v 1 1 0 15
+v 1 0 0 12
 
 # row 2
-v 2 3 0
-v 2 2 0
-v 2 1 0
-v 2 0 0
+v 2 3 0 6
+v 2 2 0 19
+v 2 1 0 16
+v 2 0 0 13
 
 # row 3
-v 3 2 0
-v 3 1 0
+v 3 2 0 18
+v 3 1 0 17
 
 # row 4
-v 4 2 0
-v 4 1 0
+v 4 2 0 22
+v 4 1 0 21
 
 # half edges
 # vertex, nextHalfEdge, face, twin
