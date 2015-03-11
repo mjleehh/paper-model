@@ -7,21 +7,20 @@ var jscs = require('gulp-jscs');
 var webpack = require('webpack');
 
 
-var indexFile = 'index.html';
 var srcFiles = path.join('lib', '**', '*.js');
 var unitTestFiles = path.join('test', 'unit', '**', '*.test.js');
 var functionalTestFiles = path.join('test', 'functional', 'src', '*.test.js');
 
 
 gulp.task('jshint', function(){
-    return gulp.src([indexFile, srcFiles, unitTestFiles, functionalTestFiles])
+    return gulp.src([srcFiles, unitTestFiles, functionalTestFiles])
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
         .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('jscs', function(){
-    return gulp.src([indexFile, srcFiles, unitTestFiles, functionalTestFiles])
+    return gulp.src([srcFiles, unitTestFiles, functionalTestFiles])
         .pipe(jscs());
 });
 
