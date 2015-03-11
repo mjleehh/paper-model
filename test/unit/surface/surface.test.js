@@ -58,18 +58,18 @@ describe('Surface', function(){
 
     it('has face edges', function(){
         var expectedResult = [
-            {vertex: 1, nextHalfEdge: 3, face: 0, twin: null},
-            {vertex: 2, nextHalfEdge: 5, face: 1, twin: null},
-            {vertex: 0, nextHalfEdge: 0, face: 0, twin: null},
-            {vertex: 4, nextHalfEdge: 6, face: 0, twin: 4},
-            {vertex: 1, nextHalfEdge: 1, face: 1, twin: 3},
-            {vertex: 5, nextHalfEdge: 7, face: 1, twin: null},
-            {vertex: 3, nextHalfEdge: 2, face: 0, twin: 8},
-            {vertex: 4, nextHalfEdge: 4, face: 1, twin: null},
-            {vertex: 4, nextHalfEdge: 10, face: 2, twin: 6},
-            {vertex: 3, nextHalfEdge: 8, face: 2, twin: null},
-            {vertex: 7, nextHalfEdge: 11, face: 2, twin: null},
-            {vertex: 6, nextHalfEdge: 9, face: 2, twin: null}
+            {vertex: 1, nextHalfEdge: 3,  prevHalfEdge: 2,  face: 0, twin: null},
+            {vertex: 2, nextHalfEdge: 5,  prevHalfEdge: 4,  face: 1, twin: null},
+            {vertex: 0, nextHalfEdge: 0,  prevHalfEdge: 6,  face: 0, twin: null},
+            {vertex: 4, nextHalfEdge: 6,  prevHalfEdge: 0,  face: 0, twin: 4},
+            {vertex: 1, nextHalfEdge: 1,  prevHalfEdge: 7,  face: 1, twin: 3},
+            {vertex: 5, nextHalfEdge: 7,  prevHalfEdge: 1,  face: 1, twin: null},
+            {vertex: 3, nextHalfEdge: 2,  prevHalfEdge: 3,  face: 0, twin: 8},
+            {vertex: 4, nextHalfEdge: 4,  prevHalfEdge: 5,  face: 1, twin: null},
+            {vertex: 4, nextHalfEdge: 10, prevHalfEdge: 9,  face: 2, twin: 6},
+            {vertex: 3, nextHalfEdge: 8,  prevHalfEdge: 11, face: 2, twin: null},
+            {vertex: 7, nextHalfEdge: 11, prevHalfEdge: 8,  face: 2, twin: null},
+            {vertex: 6, nextHalfEdge: 9,  prevHalfEdge: 10, face: 2, twin: null}
         ];
         var buffer = fs.readFileSync(__dirname + '/resources/l-patch-2.surface', {encoding: 'ascii'});
         var surface = new self.surface.Surface(self.surface.readSurface(buffer));

@@ -54,73 +54,85 @@
       "vertex": 1,
       "nextHalfEdge": 3,
       "face": 0,
-      "twin": null
+      "twin": null,
+      "prevHalfEdge": 2
     },
     {
       "vertex": 2,
       "nextHalfEdge": 5,
       "face": 1,
-      "twin": null
+      "twin": null,
+      "prevHalfEdge": 4
     },
     {
       "vertex": 0,
       "nextHalfEdge": 0,
       "face": 0,
-      "twin": null
+      "twin": null,
+      "prevHalfEdge": 6
     },
     {
       "vertex": 4,
       "nextHalfEdge": 6,
       "face": 0,
-      "twin": 4
+      "twin": 4,
+      "prevHalfEdge": 0
     },
     {
       "vertex": 1,
       "nextHalfEdge": 1,
       "face": 1,
-      "twin": 3
+      "twin": 3,
+      "prevHalfEdge": 7
     },
     {
       "vertex": 5,
       "nextHalfEdge": 7,
       "face": 1,
-      "twin": null
+      "twin": null,
+      "prevHalfEdge": 1
     },
     {
       "vertex": 3,
       "nextHalfEdge": 2,
       "face": 0,
-      "twin": 8
+      "twin": 8,
+      "prevHalfEdge": 3
     },
     {
       "vertex": 4,
       "nextHalfEdge": 4,
       "face": 1,
-      "twin": null
+      "twin": null,
+      "prevHalfEdge": 5
     },
     {
       "vertex": 4,
       "nextHalfEdge": 10,
       "face": 2,
-      "twin": 6
+      "twin": 6,
+      "prevHalfEdge": 9
     },
     {
       "vertex": 3,
       "nextHalfEdge": 8,
       "face": 2,
-      "twin": null
+      "twin": null,
+      "prevHalfEdge": 11
     },
     {
       "vertex": 7,
       "nextHalfEdge": 11,
       "face": 2,
-      "twin": null
+      "twin": null,
+      "prevHalfEdge": 8
     },
     {
       "vertex": 6,
       "nextHalfEdge": 9,
       "face": 2,
-      "twin": null
+      "twin": null,
+      "prevHalfEdge": 10
     }
   ],
   "faces": [
