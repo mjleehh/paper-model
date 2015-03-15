@@ -1,0 +1,34 @@
+# vertices
+# x, y, z, firstHalfEdge
+
+v 0 0 0
+v 1 0 0
+v 0 1 0
+v 0 0 1
+
+
+# half edges
+# vertex, nextHalfEdge, face, twin
+
+# face 0
+h 2 1 0
+h 0 2 0 3
+h 1 0 0 6
+
+# face 1
+h 2 4 1 1
+h 3 5 1
+h 0 3 1 7
+
+# face 2
+h 0 7 2 2
+h 3 8 2 5
+h 1 6 2
+
+
+# faces
+# firstHalfEdge
+
+f 0
+f 3
+f 6

@@ -1,0 +1,278 @@
+{
+  "vertices": [
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "firstHalfEdge": 16
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "firstHalfEdge": 17
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "firstHalfEdge": 18
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "firstHalfEdge": 19
+    },
+    {
+      "x": -1,
+      "y": 1,
+      "z": 0,
+      "firstHalfEdge": 10
+    },
+    {
+      "x": -1,
+      "y": 0,
+      "z": 0,
+      "firstHalfEdge": 11
+    },
+    {
+      "x": -2,
+      "y": 1,
+      "z": 0,
+      "firstHalfEdge": 2
+    },
+    {
+      "x": -2,
+      "y": 0,
+      "z": 0,
+      "firstHalfEdge": 3
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "firstHalfEdge": 5
+    },
+    {
+      "x": -1,
+      "y": 2,
+      "z": 0,
+      "firstHalfEdge": 6
+    },
+    {
+      "x": 0,
+      "y": -1,
+      "z": 0,
+      "firstHalfEdge": 12
+    },
+    {
+      "x": -1,
+      "y": -1,
+      "z": 0,
+      "firstHalfEdge": 15
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "firstHalfEdge": 20
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 0,
+      "firstHalfEdge": 21
+    }
+  ],
+  "halfEdges": [
+    {
+      "nextHalfEdge": 1,
+      "prevHalfEdge": 3,
+      "face": 0,
+      "twin": null,
+      "vertex": 5
+    },
+    {
+      "nextHalfEdge": 2,
+      "prevHalfEdge": 0,
+      "face": 0,
+      "twin": 11,
+      "vertex": 4
+    },
+    {
+      "nextHalfEdge": 3,
+      "prevHalfEdge": 1,
+      "face": 0,
+      "twin": null,
+      "vertex": 6
+    },
+    {
+      "nextHalfEdge": 0,
+      "prevHalfEdge": 2,
+      "face": 0,
+      "twin": null,
+      "vertex": 7
+    },
+    {
+      "nextHalfEdge": 5,
+      "prevHalfEdge": 7,
+      "face": 1,
+      "twin": 10,
+      "vertex": 2
+    },
+    {
+      "nextHalfEdge": 6,
+      "prevHalfEdge": 4,
+      "face": 1,
+      "twin": null,
+      "vertex": 8
+    },
+    {
+      "nextHalfEdge": 7,
+      "prevHalfEdge": 5,
+      "face": 1,
+      "twin": null,
+      "vertex": 9
+    },
+    {
+      "nextHalfEdge": 4,
+      "prevHalfEdge": 6,
+      "face": 1,
+      "twin": null,
+      "vertex": 4
+    },
+    {
+      "nextHalfEdge": 9,
+      "prevHalfEdge": 11,
+      "face": 2,
+      "twin": 14,
+      "vertex": 3
+    },
+    {
+      "nextHalfEdge": 10,
+      "prevHalfEdge": 8,
+      "face": 2,
+      "twin": 19,
+      "vertex": 2
+    },
+    {
+      "nextHalfEdge": 11,
+      "prevHalfEdge": 9,
+      "face": 2,
+      "twin": 4,
+      "vertex": 4
+    },
+    {
+      "nextHalfEdge": 8,
+      "prevHalfEdge": 10,
+      "face": 2,
+      "twin": 1,
+      "vertex": 5
+    },
+    {
+      "nextHalfEdge": 13,
+      "prevHalfEdge": 15,
+      "face": 3,
+      "twin": null,
+      "vertex": 10
+    },
+    {
+      "nextHalfEdge": 14,
+      "prevHalfEdge": 12,
+      "face": 3,
+      "twin": null,
+      "vertex": 3
+    },
+    {
+      "nextHalfEdge": 15,
+      "prevHalfEdge": 13,
+      "face": 3,
+      "twin": 8,
+      "vertex": 5
+    },
+    {
+      "nextHalfEdge": 12,
+      "prevHalfEdge": 14,
+      "face": 3,
+      "twin": null,
+      "vertex": 11
+    },
+    {
+      "nextHalfEdge": 17,
+      "prevHalfEdge": 19,
+      "face": 4,
+      "twin": null,
+      "vertex": 0
+    },
+    {
+      "nextHalfEdge": 18,
+      "prevHalfEdge": 16,
+      "face": 4,
+      "twin": 23,
+      "vertex": 1
+    },
+    {
+      "nextHalfEdge": 19,
+      "prevHalfEdge": 17,
+      "face": 4,
+      "twin": null,
+      "vertex": 2
+    },
+    {
+      "nextHalfEdge": 16,
+      "prevHalfEdge": 18,
+      "face": 4,
+      "twin": 9,
+      "vertex": 3
+    },
+    {
+      "nextHalfEdge": 21,
+      "prevHalfEdge": 23,
+      "face": 5,
+      "twin": null,
+      "vertex": 12
+    },
+    {
+      "nextHalfEdge": 22,
+      "prevHalfEdge": 20,
+      "face": 5,
+      "twin": null,
+      "vertex": 13
+    },
+    {
+      "nextHalfEdge": 23,
+      "prevHalfEdge": 21,
+      "face": 5,
+      "twin": null,
+      "vertex": 1
+    },
+    {
+      "nextHalfEdge": 20,
+      "prevHalfEdge": 22,
+      "face": 5,
+      "twin": 17,
+      "vertex": 0
+    }
+  ],
+  "faces": [
+    {
+      "firstHalfEdge": 0
+    },
+    {
+      "firstHalfEdge": 4
+    },
+    {
+      "firstHalfEdge": 8
+    },
+    {
+      "firstHalfEdge": 12
+    },
+    {
+      "firstHalfEdge": 16
+    },
+    {
+      "firstHalfEdge": 20
+    }
+  ]
+}
