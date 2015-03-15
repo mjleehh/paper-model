@@ -1,4 +1,4 @@
-var createMapVertex = require('../../../lib/unfold/create-map-vertex');
+var createMapVertex = require('../../../index').unfold.VertexMapper;
 var expect = require('chai').expect;
 
 describe('mapVertex', function(){
