@@ -8,7 +8,7 @@ describe('findSpanningTree', function(){
             var graph = new self.graph.Graph({
                 nodes: []
             });
-            self.converters.findSpanningTree(graph);
+            self.tree.findSpanningTree(graph);
         }).to.throw(Error);
     });
 
