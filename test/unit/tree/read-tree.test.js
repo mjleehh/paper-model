@@ -9,6 +9,14 @@ describe('readTree', function(){
         }).to.throw(Error);
     });
 
+    it('fails if there is no root node', function(){
+        expect(function(){
+            var buffer = fs.readFileSync(
+                __dirname + '/resources/simple-with-missing-root-node.tree', {encoding: 'ascii'});
+            self.tree.readTree(buffer);
+        }).to.throw(Error);
+    });
+
     it('reads simple trees', function(){
         var expectedResult = JSON.parse(fs.readFileSync(__dirname + '/resources/simple.json', {encoding: 'ascii'}));
         var buffer = fs.readFileSync(__dirname + '/resources/simple.tree', {encoding: 'ascii'});
