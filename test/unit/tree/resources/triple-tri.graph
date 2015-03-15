@@ -1,0 +1,12 @@
+n one
+n two
+n three
+n four
+
+e 3 0
+e 3 1
+e 3 2
+
+e 0 1
+e 1 2
+e 2 0
