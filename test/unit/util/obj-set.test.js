@@ -1,7 +1,7 @@
 // jshint -W030
 var ObjSet = require('../../../lib/util/obj-set');
 var expect = require('chai').expect;
-var assert = require('chai').assert;
+
 
 describe('ObjSet', function(){
     it('can be empty', function(){
@@ -52,6 +52,29 @@ describe('ObjSet', function(){
     });
 
     it('supports a custom hash function', function(){
-        assert(false, 'implement test');
+        var edgeHash = function(edge){
+            return edge[0] + '|' + edge[1];
+        };
+        var edgeSet = new ObjSet([[0, 1], [4, 5]], edgeHash);
+        expect(edgeSet.has([0, 1])).to.be.true;
+        expect(edgeSet.hasKey('0|1')).to.be.true;
+        expect(edgeSet.has([4, 5])).to.be.true;
+        expect(edgeSet.hasKey('4|5')).to.be.true;
+        expect(edgeSet.has([6, 19])).to.be.false;
+        expect(edgeSet.hasKey('6|19')).to.be.false;
+        expect(edgeSet.has([3, 9])).to.be.false;
+        expect(edgeSet.hasKey('3|9')).to.be.false;
+
+        edgeSet.add([3, 9]);
+        expect(edgeSet.has([0, 1])).to.be.true;
+        expect(edgeSet.hasKey('0|1')).to.be.true;
+        expect(edgeSet.has([4, 5])).to.be.true;
+        expect(edgeSet.hasKey('4|5')).to.be.true;
+        expect(edgeSet.has([6, 19])).to.be.false;
+        expect(edgeSet.hasKey('6|19')).to.be.false;
+        expect(edgeSet.has([3, 9])).to.be.true;
+        expect(edgeSet.hasKey('3|9')).to.be.true;
+
+        expect(edgeSet.elements).to.have.deep.all.members([[0, 1], [4, 5], [3, 9]]);
     });
 });
