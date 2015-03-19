@@ -1,5 +1,5 @@
 // jshint -W030
-var lineIntersection = require('../../../lib/util/line-intersection');
+var lineIntersection = require('../../../index').algorithms.lines;
 var expect = require('chai').expect;
 
 
