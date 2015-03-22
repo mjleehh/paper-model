@@ -77,4 +77,15 @@ describe('ObjSet', function(){
 
         expect(edgeSet.elements).to.have.deep.all.members([[0, 1], [4, 5], [3, 9]]);
     });
+
+    it('has a size', function(){
+        var emptyObjSet = new ObjSet();
+        expect(emptyObjSet.size).to.be.eql(0);
+
+        var numberSet = new ObjSet([3, 12, 99]);
+        expect(numberSet.size).to.be.eql(3);
+
+        numberSet.add(71);
+        expect(numberSet.size).to.be.eql(4);
+    });
 });
