@@ -1,0 +1,35 @@
+{
+  "nodes": [
+    {
+      "value": "one",
+      "children": [
+        0
+      ]
+    },
+    {
+      "value": "two",
+      "children": [
+        1
+      ]
+    },
+    {
+      "value": "three",
+      "children": []
+    }
+  ],
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      0,
+      2
+    ]
+  ],
+  "rootNode": 0
+}

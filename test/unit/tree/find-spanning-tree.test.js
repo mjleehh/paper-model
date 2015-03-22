@@ -17,7 +17,8 @@ describe('findSpanningTree', function(){
             nodes: [{
                 value: 'one',
                 neighbours: []
-            }]
+            }],
+            edges: []
         });
         var tree = self.tree.findSpanningTree(graph);
         expect(tree).to.be.eql({
@@ -25,6 +26,7 @@ describe('findSpanningTree', function(){
                 value: 'one',
                 children: []
             }],
+            edges: [],
             rootNode: 0
         });
     });
@@ -39,11 +41,12 @@ describe('findSpanningTree', function(){
     });
 
     it('converts cyclic graphs', function(){
-        var expectedResult = self.tree.readTree(fs.readFileSync(
-            __dirname + '/resources/cyclic.tree',
+        var expectedResult = JSON.parse(fs.readFileSync(
+            __dirname + '/resources/cyclic.json',
             {encoding: 'ascii'}));
         var graph = new self.graph.Graph(
-            self.graph.readGraph(fs.readFileSync(__dirname + '/resources/cyclic.graph', {encoding: 'ascii'})));
+            self.graph.readGraph(fs.readFileSync(__dirname + '/resources/cyclic.graph',
+            {encoding: 'ascii'})));
         var spanningTree = self.tree.findSpanningTree(graph);
         expect(spanningTree).to.be.eql(expectedResult);
     });
