@@ -1,0 +1,42 @@
+n one
+n two 1
+n three
+n four 3
+n five
+n six 4
+n seven 10 13
+n eight 6 11
+n nine 17 16
+n ten
+n eleven 8 5 9 12
+n twelve
+n thirteen
+n fourteen 18
+n fifteen
+n sixteen 21 20
+n seventeen
+
+e 0 1
+e 1 2
+e 2 3
+e 4 3
+e 0 5
+e 1 10
+e 3 7
+e 4 8
+e 5 10
+e 10 6
+e 6 7
+e 7 8
+e 10 15
+e 6 9
+e 9 11
+e 9 7
+e 8 12
+e 8 13
+e 13 14
+e 14 11
+e 11 15
+e 15 16
+
+r 10
