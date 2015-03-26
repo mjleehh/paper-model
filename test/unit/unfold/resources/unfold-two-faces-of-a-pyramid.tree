@@ -1,6 +1,6 @@
-n one
+n one 0
 n two
 
-c 0 1
+e 1 0
 
 r 0

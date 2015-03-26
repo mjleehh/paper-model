@@ -7,7 +7,7 @@ function complexGraph(){
         fs.readFileSync(__dirname + '/resources/complex.graph', {encoding: 'ascii'})));
 }
 
-describe('Node', function(){
+describe('graph Node', function(){
     it('has a value', function(){
         expect(complexGraph().getNode(2).value).to.be.eql('three');
         expect(complexGraph().getNode(5).value).to.be.eql('six');

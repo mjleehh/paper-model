@@ -7,7 +7,7 @@ function simpleTree(){
         fs.readFileSync(__dirname + '/resources/simple.tree', {encoding: 'ascii'})));
 }
 
-describe('Node', function(){
+describe('tree Node', function(){
     it('has an id', function(){
         expect(simpleTree().getNode(7).id).to.be.eql(7);
     });

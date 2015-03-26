@@ -40,10 +40,10 @@ describe('findSpanningTree', function(){
         }).to.throw(Error);
     });
 
-    it('finds spanning trees of triple triangle graph', function(){
+    /*it('finds spanning trees of triple triangle graph', function(){
         var graph = new self.graph.Graph(
             self.graph.readGraph(fs.readFileSync(__dirname + '/resources/triple-tri.graph', {encoding: 'ascii'})));
-        self.tree.spanningTrees(graph);
+        //self.tree.spanningTrees(graph);
         //expect(spanningTree).to.be.eql(expectedResult);
-    });
+    });*/
 });
