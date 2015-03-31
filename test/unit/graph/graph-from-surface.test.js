@@ -36,8 +36,9 @@ describe('graphFromSurface', function(){
             ],
             edges: [[0, 1], [0, 2]]
         };
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
+        var surface = new self.surface.Surface(
+            self.surface.readSurface(
+                util.asciiResource('l-patch-2.surface')));
         var graph = self.graph.graphFromSurface(surface);
         expect(graph).to.be.eql(expectedResult);
     });

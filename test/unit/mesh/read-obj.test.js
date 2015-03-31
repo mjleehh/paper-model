@@ -14,10 +14,9 @@ describe('readObj', function(){
     });
 
     it('reads a file', function(){
-        var expectedResult = JSON.parse(
-            util.asciiResource('box.json'));
-        var buffer = util.asciiResource('box.obj');
-        var mesh = self.mesh.readObj(buffer);
+        var expectedResult = util.jsonResource('box.json');
+        var mesh = self.mesh.readObj(
+            util.asciiResource('box.obj'));
         expect(mesh).to.be.eql(expectedResult);
     });
 });

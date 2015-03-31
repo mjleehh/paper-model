@@ -30,16 +30,15 @@ describe('readGraph', function(){
             ],
             edges: [[0, 1], [1, 2], [0, 2]]
         };
-        var buffer = util.asciiResource('cyclic.graph');
-        var graph = self.graph.readGraph(buffer);
+        var graph = self.graph.readGraph(
+            util.asciiResource('cyclic.graph'));
         expect(graph).to.be.eql(expectedResult);
     });
 
     it('reads complex graphs', function(){
-        var expectedResult = JSON.parse(
-            util.asciiResource('complex.json'));
-        var buffer = util.asciiResource('complex.graph');
-        var graph = self.graph.readGraph(buffer);
+        var expectedResult = util.jsonResource('complex.json');
+        var graph = self.graph.readGraph(
+            util.asciiResource('complex.graph'));
         expect(graph).to.be.eql(expectedResult);
     });
 });

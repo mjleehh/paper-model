@@ -15,9 +15,9 @@ describe('readSurface', function(){
     });
 
     it('reads a file', function(){
-        var expectedResult = JSON.parse(util.asciiResource('l-patch-2.json'));
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = self.surface.readSurface(buffer);
+        var expectedResult = util.jsonResource('l-patch-2.json');
+        var surface = self.surface.readSurface(
+            util.asciiResource('l-patch-2.surface'));
         expect(surface).to.be.eql(expectedResult);
     });
 });

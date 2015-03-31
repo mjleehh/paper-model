@@ -18,7 +18,7 @@ describe('readTree', function(){
     });
 
     it('reads simple trees', function(){
-        var expectedResult = JSON.parse(util.asciiResource('simple.json'));
+        var expectedResult = util.jsonResource('simple.json');
         var tree = self.tree.readTree(
             util.asciiResource('simple.tree'));
         expect(tree).to.be.eql(expectedResult);

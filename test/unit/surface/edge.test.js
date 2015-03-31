@@ -5,8 +5,8 @@ var util = require('../util')(__dirname);
 
 
 function getTestSurface(){
-    var buffer = util.asciiResource('flat-square-donut.surface');
-    var surfaceImpl = self.surface.readSurface(buffer);
+    var surfaceImpl = self.surface.readSurface(
+        util.asciiResource('flat-square-donut.surface'));
     return new self.surface.Surface(surfaceImpl);
 }
 

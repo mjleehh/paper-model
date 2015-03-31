@@ -3,19 +3,22 @@ var expect = require('chai').expect;
 var util = require('../util')(__dirname);
 
 
+function getTestSurface(){
+    return new self.surface.Surface(
+        self.surface.readSurface(
+            util.asciiResource('l-patch-2.surface')));
+}
+
 describe('Surface', function(){
     // vertices
 
     it('has a number of vertices', function(){
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
-        var numFaces = surface.numVertices;
+        var numFaces = getTestSurface().numVertices;
         expect(numFaces).to.be.eql(8);
     });
 
     it('has single vertices', function(){
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
+        var surface = getTestSurface();
 
         for (var i = 0; i < surface.numVertices; ++i) {
             expect(surface.getVertex(i).id).to.be.eql(i);
@@ -33,24 +36,19 @@ describe('Surface', function(){
             {x: 0, y: 2, z: 0, firstHalfEdge: 9},
             {x: 1, y: 2, z: 0, firstHalfEdge: 11}
         ];
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
-        var faces = surface.vertices;
+        var faces = getTestSurface().vertices;
         expect(faces).to.be.eql(expectedResult);
     });
 
     // face edges
 
     it('has a number of face edges', function(){
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
-        var numFaces = surface.numFaceEdges;
+        var numFaces = getTestSurface().numFaceEdges;
         expect(numFaces).to.be.eql(12);
     });
 
     it('has single face edges', function(){
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
+        var surface = getTestSurface();
 
         for (var i = 0; i < surface.numFaceEdges; ++i) {
             expect(surface.getFaceEdge(i).id).to.be.eql(i);
@@ -72,24 +70,19 @@ describe('Surface', function(){
             {vertex: 7, nextHalfEdge: 11, prevHalfEdge: 8,  face: 2, twin: null},
             {vertex: 6, nextHalfEdge: 9,  prevHalfEdge: 10, face: 2, twin: null}
         ];
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
-        var faces = surface.faceEdges;
+        var faces = getTestSurface().faceEdges;
         expect(faces).to.be.eql(expectedResult);
     });
 
     // faces
 
     it('has a number of faces', function(){
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
-        var numFaces = surface.numFaces;
+        var numFaces = getTestSurface().numFaces;
         expect(numFaces).to.be.eql(3);
     });
 
     it('has single faces', function(){
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
+        var surface = getTestSurface();
 
         for (var i = 0; i < surface.numFaces; ++i) {
             expect(surface.getFace(i).id).to.be.eql(i);
@@ -102,24 +95,19 @@ describe('Surface', function(){
             {firstHalfEdge: 1},
             {firstHalfEdge: 8}
         ];
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
-        var faces = surface.faces;
+        var faces = getTestSurface().faces;
         expect(faces).to.be.eql(expectedResult);
     });
 
     // edges
 
     it('has a number of edges', function(){
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
-        var numEdges = surface.numEdges;
+        var numEdges = getTestSurface().numEdges;
         expect(numEdges).to.be.eql(10);
     });
 
     it('has single edges', function(){
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
+        var surface = getTestSurface();
 
         for (var i = 0; i < surface.numEdges; ++i) {
             expect(surface.getEdge(i).id).to.be.eql(i);
@@ -130,8 +118,6 @@ describe('Surface', function(){
         var expectedResult = [
             [0], [1], [2], [5], [7], [9], [10], [11], [3, 4], [6, 8]
         ];
-        var buffer = util.asciiResource('l-patch-2.surface');
-        var surface = new self.surface.Surface(self.surface.readSurface(buffer));
-        expect(surface.edges).to.be.eql(expectedResult);
+        expect(getTestSurface().edges).to.be.eql(expectedResult);
     });
 });

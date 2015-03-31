@@ -42,8 +42,7 @@ describe('findSpanningTree', function(){
     });
 
     it('converts cyclic graphs', function(){
-        var expectedResult = JSON.parse(
-            util.asciiResource('cyclic.json'));
+        var expectedResult = util.jsonResource('cyclic.json');
         var graph = new self.graph.Graph(
             self.graph.readGraph(
                 util.asciiResource('cyclic.graph')));

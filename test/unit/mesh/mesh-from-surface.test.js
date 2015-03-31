@@ -19,10 +19,9 @@ describe('meshFromSurface', function(){
     });
 
     it('converts a simple surface', function(){
-        var expectedResult = JSON.parse(
-            util.asciiResource('l-patch-2.mesh.json'));
-        var surface = new self.surface.Surface(JSON.parse(
-            util.asciiResource('l-patch-2.surface.json')));
+        var expectedResult = util.jsonResource('l-patch-2.mesh.json');
+        var surface = new self.surface.Surface(
+            util.jsonResource('l-patch-2.surface.json'));
         var mesh = self.mesh.meshFronSurface(surface);
         expect(mesh).to.be.eql(expectedResult);
     });

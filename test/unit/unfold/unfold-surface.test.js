@@ -5,8 +5,7 @@ var util = require('../util')(__dirname);
 
 describe('unfoldSurface', function(){
     it('unfolds a box', function(){
-        var expectedResult = JSON.parse(
-            util.asciiResource('unfolded-patch.json'));
+        var expectedResult = util.jsonResource('unfolded-patch.json');
         var surface = new self.surface.Surface(self.surface.readSurface(
             util.asciiResource('patch.surface')));
         var tree = self.tree.readTree(
@@ -17,8 +16,7 @@ describe('unfoldSurface', function(){
     });
 
     it('unfolds a pyramid', function(){
-        var expectedResult = JSON.parse(
-            util.asciiResource('unfolded-pyramid.json'));
+        var expectedResult = util.jsonResource('unfolded-pyramid.json');
         var surface = new self.surface.Surface(self.surface.readSurface(
             util.asciiResource('pyramid.surface')));
         var tree = self.tree.readTree(
@@ -29,8 +27,7 @@ describe('unfoldSurface', function(){
     });
 
     it('unfolds an open pyramid', function(){
-        var expectedResult = JSON.parse(
-            util.asciiResource('unfolded-open-pyramid.json'));
+        var expectedResult = util.jsonResource('unfolded-open-pyramid.json');
         var surface = new self.surface.Surface(self.surface.readSurface(
             util.asciiResource('open-pyramid.surface')));
         var tree = self.tree.readTree(
@@ -41,8 +38,7 @@ describe('unfoldSurface', function(){
     });
 
     it('unfolds two faces of a pyramid', function(){
-        var expectedResult = JSON.parse(
-            util.asciiResource('unfolded-two-faces-of-a-pyramid.json'));
+        var expectedResult = util.jsonResource('unfolded-two-faces-of-a-pyramid.json');
         var surface = new self.surface.Surface(self.surface.readSurface(
             util.asciiResource('pyramid.surface')));
         var tree = self.tree.readTree(
@@ -53,8 +49,7 @@ describe('unfoldSurface', function(){
     });
 
     it('unfolds a pyramid as a fan', function(){
-        var expectedResult = JSON.parse(
-            util.asciiResource('unfold-pyramid-fan.json'));
+        var expectedResult = util.jsonResource('unfold-pyramid-fan.json');
         var surface = new self.surface.Surface(self.surface.readSurface(
             util.asciiResource('pyramid.surface')));
         var tree = self.tree.readTree(
