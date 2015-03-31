@@ -1,10 +1,11 @@
 // jshint -W030
 var self = require('../../../index');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
+
 
 function getTestSurface(){
-    var buffer = fs.readFileSync(__dirname + '/resources/flat-square-donut.surface', {encoding: 'ascii'});
+    var buffer = util.asciiResource('flat-square-donut.surface');
     var surfaceImpl = self.surface.readSurface(buffer);
     return new self.surface.Surface(surfaceImpl);
 }

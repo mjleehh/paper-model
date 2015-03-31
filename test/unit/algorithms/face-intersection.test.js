@@ -1,13 +1,14 @@
 // jshint -W030
 var self = require('../../../index');
 var _ = require('lodash');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
 
 
 describe('face intersection', function(){
     it('detects intersecting triangles', function(){
-        var mesh = self.mesh.readObj(fs.readFileSync(__dirname + '/resources/intersecting-triangles.obj', {encoding: 'ascii'}));
+        var mesh = self.mesh.readObj(
+            util.asciiResource('intersecting-triangles.obj'));
         var triangle1 = _.map(mesh.faces[0].vertices, function(vertexIndex){
             return mesh.vertices[vertexIndex];
         });
@@ -19,7 +20,7 @@ describe('face intersection', function(){
 
     it('considers connected triangles non intersecting', function(){
         var mesh = self.mesh.readObj(
-            fs.readFileSync(__dirname + '/resources/connected-triangles.obj', {encoding: 'ascii'}));
+            util.asciiResource('connected-triangles.obj'));
         var triangle1 = _.map(mesh.faces[0].vertices, function(vertexIndex){
             return mesh.vertices[vertexIndex];
         });
@@ -31,7 +32,7 @@ describe('face intersection', function(){
 
     it('detects touching non intersecting triangles in numerically instable cases', function(){
         var mesh = self.mesh.readObj(
-            fs.readFileSync(__dirname + '/resources/non-intersecting-triangles.obj', {encoding: 'ascii'}));
+            util.asciiResource('non-intersecting-triangles.obj'));
         var triangle1 = _.map(mesh.faces[0].vertices, function(vertexIndex){
             return mesh.vertices[vertexIndex];
         });
@@ -43,7 +44,7 @@ describe('face intersection', function(){
 
     it('detects non intersecting triangles of an unfolded pyramid', function(){
         var mesh = self.mesh.readObj(
-            fs.readFileSync(__dirname + '/resources/unfolded-pyramid.obj', {encoding: 'ascii'}));
+            util.asciiResource('unfolded-pyramid.obj'));
         var triangle1 = _.map(mesh.faces[1].vertices, function(vertexIndex){
             return mesh.vertices[vertexIndex];
         });

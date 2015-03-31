@@ -1,6 +1,7 @@
 var self = require('../../../index');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
+
 
 describe('readSurface', function(){
     it('reads an empty file', function(){
@@ -14,8 +15,8 @@ describe('readSurface', function(){
     });
 
     it('reads a file', function(){
-        var expectedResult = JSON.parse(fs.readFileSync(__dirname + '/resources/l-patch-2.json', {encoding: 'ascii'}));
-        var buffer = fs.readFileSync(__dirname + '/resources/l-patch-2.surface', {encoding: 'ascii'});
+        var expectedResult = JSON.parse(util.asciiResource('l-patch-2.json'));
+        var buffer = util.asciiResource('l-patch-2.surface');
         var surface = self.surface.readSurface(buffer);
         expect(surface).to.be.eql(expectedResult);
     });

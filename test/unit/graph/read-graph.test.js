@@ -1,6 +1,7 @@
 var self = require('../../../index');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
+
 
 describe('readGraph', function(){
     it('reads an empty file', function(){
@@ -29,14 +30,15 @@ describe('readGraph', function(){
             ],
             edges: [[0, 1], [1, 2], [0, 2]]
         };
-        var buffer = fs.readFileSync(__dirname + '/resources/cyclic.graph', {encoding: 'ascii'});
+        var buffer = util.asciiResource('cyclic.graph');
         var graph = self.graph.readGraph(buffer);
         expect(graph).to.be.eql(expectedResult);
     });
 
     it('reads complex graphs', function(){
-        var expectedResult = JSON.parse(fs.readFileSync(__dirname + '/resources/complex.json', {encoding: 'ascii'}));
-        var buffer = fs.readFileSync(__dirname + '/resources/complex.graph', {encoding: 'ascii'});
+        var expectedResult = JSON.parse(
+            util.asciiResource('complex.json'));
+        var buffer = util.asciiResource('complex.graph');
         var graph = self.graph.readGraph(buffer);
         expect(graph).to.be.eql(expectedResult);
     });

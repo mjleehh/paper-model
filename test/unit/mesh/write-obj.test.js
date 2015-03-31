@@ -1,7 +1,7 @@
 // jshint -W030
 var self = require('../../../index');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
 
 
 describe('writeObj', function(){
@@ -14,9 +14,9 @@ describe('writeObj', function(){
     });
 
     it('writes a mesh', function(){
-        var expectedResult = fs.readFileSync(__dirname + '/resources/box-plain.obj', {encoding: 'ascii'});
+        var expectedResult = util.asciiResource('box-plain.obj');
         var mesh = JSON.parse(
-            fs.readFileSync(__dirname + '/resources/box.json', {encoding: 'ascii'}));
+            util.asciiResource('box.json'));
         var objData = self.mesh.writeObj(mesh);
         expect(objData).to.be.eql(expectedResult);
     });

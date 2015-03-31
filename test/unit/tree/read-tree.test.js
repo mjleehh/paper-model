@@ -1,6 +1,7 @@
 var self = require('../../../index');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
+
 
 describe('readTree', function(){
     it('fails if the tree is empty', function(){
@@ -11,16 +12,15 @@ describe('readTree', function(){
 
     it('fails if there is no root node', function(){
         expect(function(){
-            var buffer = fs.readFileSync(
-                __dirname + '/resources/simple-with-missing-root-node.tree', {encoding: 'ascii'});
-            self.tree.readTree(buffer);
+            self.tree.readTree(
+                util.asciiResource('simple-with-missing-root-node.tree'));
         }).to.throw(Error);
     });
 
     it('reads simple trees', function(){
-        var expectedResult = JSON.parse(fs.readFileSync(__dirname + '/resources/simple.json', {encoding: 'ascii'}));
-        var buffer = fs.readFileSync(__dirname + '/resources/simple.tree', {encoding: 'ascii'});
-        var tree = self.tree.readTree(buffer);
+        var expectedResult = JSON.parse(util.asciiResource('simple.json'));
+        var tree = self.tree.readTree(
+            util.asciiResource('simple.tree'));
         expect(tree).to.be.eql(expectedResult);
     });
 });

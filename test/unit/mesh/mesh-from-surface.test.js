@@ -1,6 +1,7 @@
 var self = require('../../../index');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
+
 
 describe('meshFromSurface', function(){
     it('converts an empty surface', function(){
@@ -19,9 +20,9 @@ describe('meshFromSurface', function(){
 
     it('converts a simple surface', function(){
         var expectedResult = JSON.parse(
-            fs.readFileSync(__dirname + '/resources/l-patch-2.mesh.json', {encoding: 'ascii'}));
+            util.asciiResource('l-patch-2.mesh.json'));
         var surface = new self.surface.Surface(JSON.parse(
-            fs.readFileSync(__dirname + '/resources/l-patch-2.surface.json', {encoding: 'ascii'})));
+            util.asciiResource('l-patch-2.surface.json')));
         var mesh = self.mesh.meshFronSurface(surface);
         expect(mesh).to.be.eql(expectedResult);
     });

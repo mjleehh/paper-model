@@ -1,6 +1,7 @@
 var self = require('../../../index');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
+
 
 describe('readObj', function(){
     it('reads an empty file', function(){
@@ -13,8 +14,9 @@ describe('readObj', function(){
     });
 
     it('reads a file', function(){
-        var expectedResult = JSON.parse(fs.readFileSync(__dirname + '/resources/box.json', {encoding: 'ascii'}));
-        var buffer = fs.readFileSync(__dirname + '/resources/box.obj', {encoding: 'ascii'});
+        var expectedResult = JSON.parse(
+            util.asciiResource('box.json'));
+        var buffer = util.asciiResource('box.obj');
         var mesh = self.mesh.readObj(buffer);
         expect(mesh).to.be.eql(expectedResult);
     });

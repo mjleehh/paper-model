@@ -1,10 +1,11 @@
 var self = require('../../../index');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
+
 
 function simpleTree(){
     return new self.tree.Tree(self.tree.readTree(
-        fs.readFileSync(__dirname + '/resources/simple.tree', {encoding: 'ascii'})));
+        util.asciiResource('simple.tree')));
 }
 
 describe('tree Node', function(){

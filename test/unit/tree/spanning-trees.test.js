@@ -1,6 +1,5 @@
 var self = require('../../../index');
 var expect = require('chai').expect;
-var fs = require('fs');
 
 describe('findSpanningTree', function(){
     it('fails if the graph is empty', function(){
@@ -35,14 +34,14 @@ describe('findSpanningTree', function(){
         expect(function(){
             var graph = new self.graph.Graph(
                 self.graph.readGraph(fs.readFileSync(
-                    __dirname + '/resources/disconnected.graph', {encoding: 'ascii'})));
+                    __dirname + 'disconnected.graph')));
             self.tree.spanningTrees(graph);
         }).to.throw(Error);
     });
 
     /*it('finds spanning trees of triple triangle graph', function(){
         var graph = new self.graph.Graph(
-            self.graph.readGraph(fs.readFileSync(__dirname + '/resources/triple-tri.graph', {encoding: 'ascii'})));
+            self.graph.readGraph(util.readAsciiResource('triple-tri.graph')));
         //self.tree.spanningTrees(graph);
         //expect(spanningTree).to.be.eql(expectedResult);
     });*/

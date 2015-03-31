@@ -1,6 +1,7 @@
 var self = require('../../../index');
 var expect = require('chai').expect;
-var fs = require('fs');
+var util = require('../util')(__dirname);
+
 
 describe('findSpanningTree', function(){
     it('fails if the graph is empty', function(){
@@ -34,19 +35,18 @@ describe('findSpanningTree', function(){
     it('fails if graph has disconnected components', function(){
         expect(function(){
             var graph = new self.graph.Graph(
-                self.graph.readGraph(fs.readFileSync(
-                    __dirname + '/resources/disconnected.graph', {encoding: 'ascii'})));
+                self.graph.readGraph(
+                    util.asciiResource('disconnected.graph')));
             self.tree.findSpanningTree(graph);
         }).to.throw(Error);
     });
 
     it('converts cyclic graphs', function(){
-        var expectedResult = JSON.parse(fs.readFileSync(
-            __dirname + '/resources/cyclic.json',
-            {encoding: 'ascii'}));
+        var expectedResult = JSON.parse(
+            util.asciiResource('cyclic.json'));
         var graph = new self.graph.Graph(
-            self.graph.readGraph(fs.readFileSync(__dirname + '/resources/cyclic.graph',
-            {encoding: 'ascii'})));
+            self.graph.readGraph(
+                util.asciiResource('cyclic.graph')));
         var spanningTree = self.tree.findSpanningTree(graph);
         expect(spanningTree).to.be.eql(expectedResult);
     });

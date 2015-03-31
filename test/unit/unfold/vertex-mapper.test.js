@@ -1,6 +1,7 @@
 var createMapVertex = require('../../../index').unfold.VertexMapper;
 var expect = require('chai').expect;
 
+
 describe('mapVertex', function(){
     it('performs identity mappings', function(){
         var faceEdge = {

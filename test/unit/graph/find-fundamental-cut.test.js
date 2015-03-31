@@ -1,16 +1,14 @@
 var self = require('../../../index');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
 
-
-var RESOURCE_FOLDER = __dirname + '/resources/find-fundamental-cut/';
 
 describe('findFundamentalCut', function(){
     it('unfolds a box', function(){
         var graph = new self.graph.Graph(self.graph.readGraph(
-            fs.readFileSync(RESOURCE_FOLDER + 'cutable.graph', {encoding: 'ascii'})));
+            util.asciiResource('cutable.graph')));
         var spanningTree = new self.tree.Tree(self.tree.readTree(
-            fs.readFileSync(RESOURCE_FOLDER + 'spanning.tree', {encoding: 'ascii'})));
+            util.asciiResource('spanning.tree')));
 
         expect(self.graph.findFundamentalCut(graph, spanningTree, 10))
             .to.contain(2)

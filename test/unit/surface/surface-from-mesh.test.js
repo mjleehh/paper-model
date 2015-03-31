@@ -1,19 +1,19 @@
 var self = require('../../../index');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
 
 
 describe('surfaceFromMesh', function(){
     it('converts simple meshes', function(){
-        var expectedResult = JSON.parse(fs.readFileSync(__dirname + '/resources/l-patch.json', {encoding: 'ascii'}));
-        var buffer = fs.readFileSync(__dirname + '/resources/l-patch.obj', {encoding: 'ascii'});
+        var expectedResult = JSON.parse(util.asciiResource('l-patch.json'));
+        var buffer = util.asciiResource('l-patch.obj');
         var mesh = self.mesh.readObj(buffer);
         var surface = self.surface.surfaceFromMesh(mesh);
         expect(surface).to.be.eql(expectedResult);
     });
 
     it('fails on non manifold edges', function(){
-        var buffer = fs.readFileSync(__dirname + '/resources/non-manifold-extruded-t.obj', {encoding: 'ascii'});
+        var buffer = util.asciiResource('non-manifold-extruded-t.obj');
         var mesh = self.mesh.readObj(buffer);
         expect(function(){
             self.surface.surfaceFromMesh(mesh);

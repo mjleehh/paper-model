@@ -1,10 +1,11 @@
 var self = require('../../../index');
-var fs = require('fs');
 var expect = require('chai').expect;
+var util = require('../util')(__dirname);
+
 
 function complexGraph(){
     return new self.graph.Graph(self.graph.readGraph(
-        fs.readFileSync(__dirname + '/resources/complex.graph', {encoding: 'ascii'})));
+        util.asciiResource('complex.graph')));
 }
 
 describe('graph Node', function(){
