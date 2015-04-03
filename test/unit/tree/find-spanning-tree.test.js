@@ -15,10 +15,7 @@ describe('findSpanningTree', function(){
 
     it('converts trivial graphs', function(){
         var graph = new self.graph.Graph({
-            nodes: [{
-                value: 'one',
-                neighbours: []
-            }],
+            nodes: ['one'],
             edges: []
         });
         var tree = self.tree.findSpanningTree(graph);

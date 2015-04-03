@@ -15,19 +15,7 @@ describe('readGraph', function(){
 
     it('reads cyclic graphs', function(){
         var expectedResult = {
-            nodes: [{
-                    value: 'one',
-                    edges: [0, 2]
-                },
-                {
-                    value: 'two',
-                    edges: [0, 1]
-                },
-                {
-                    value: 'three',
-                    edges: [1, 2]
-                }
-            ],
+            nodes: ['one', 'two', 'three'],
             edges: [[0, 1], [1, 2], [0, 2]]
         };
         var graph = self.graph.readGraph(

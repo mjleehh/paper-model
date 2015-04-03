@@ -1,54 +1,5 @@
 {
-  "nodes": [
-    {
-      "value": "one",
-      "edges": [
-        0,
-        6,
-        7
-      ]
-    },
-    {
-      "value": "two",
-      "edges": [
-        0,
-        1,
-        3,
-        8
-      ]
-    },
-    {
-      "value": "three",
-      "edges": [
-        3,
-        4
-      ]
-    },
-    {
-      "value": "four",
-      "edges": [
-        1,
-        2,
-        4
-      ]
-    },
-    {
-      "value": "five",
-      "edges": [
-        5,
-        6,
-        8
-      ]
-    },
-    {
-      "value": "six",
-      "edges": [
-        2,
-        5,
-        7
-      ]
-    }
-  ],
+  "nodes": ["one", "two", "three", "four", "five", "six"],
   "edges": [
     [
       0,

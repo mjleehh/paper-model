@@ -16,9 +16,7 @@ describe('graph writeDot', function(){
     it('writes a trivial graph', function(){
         var expectedResult = util.asciiResource('trivial-graph.dot');
         var graph = {
-            nodes: [{
-                value: 'one'
-            }],
+            nodes: ['one'],
             edges: []
         };
         expect(self.graph.writeDot(graph)).to.be.eql(expectedResult);
