@@ -13,6 +13,17 @@ describe('graph writeDot', function(){
         expect(self.graph.writeDot(graph)).to.be.eql(expectedResult);
     });
 
+    it('writes a trivial graph', function(){
+        var expectedResult = util.asciiResource('trivial-graph.dot');
+        var graph = {
+            nodes: [{
+                value: 'one'
+            }],
+            edges: []
+        };
+        expect(self.graph.writeDot(graph)).to.be.eql(expectedResult);
+    });
+
     it('writes cyclic graphs', function(){
         var expectedResult = util.asciiResource('cyclic.dot');
         var graph = self.graph.readGraph(
