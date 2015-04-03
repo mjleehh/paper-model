@@ -3,7 +3,7 @@ var expect = require('chai').expect;
 var util = require('../util')(__dirname);
 
 
-describe('writeDot', function(){
+describe('graph writeDot', function(){
     it('writes an empty graph', function(){
         var expectedResult = 'graph G {\n}\n';
         var graph = {
