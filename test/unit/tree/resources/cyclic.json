@@ -31,5 +31,9 @@
       2
     ]
   ],
+  "edgesInTree": [
+    true,
+    true
+  ],
   "rootNode": 0
 }
