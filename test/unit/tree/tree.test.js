@@ -10,7 +10,7 @@ function simpleTree(){
 
 function subgraphTree(){
     return new self.tree.Tree(self.tree.readTree(
-        util.asciiResource('subgraph-tree.tree')));
+        util.asciiResource('subgraph.tree')));
 }
 
 describe('Tree', function(){
