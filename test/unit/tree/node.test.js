@@ -10,7 +10,15 @@ function simpleTree(){
 
 describe('tree Node', function(){
     it('has an id', function(){
+        expect(simpleTree().getNode(3).id).to.be.eql(3);
+        expect(simpleTree().getNode(6).id).to.be.eql(6);
         expect(simpleTree().getNode(7).id).to.be.eql(7);
+    });
+
+    it('has a value', function(){
+        expect(simpleTree().getNode(1).value).to.be.eql('two');
+        expect(simpleTree().getNode(3).value).to.be.eql('four');
+        expect(simpleTree().getNode(4).value).to.be.eql('five');
     });
 
     it('has children', function(){
