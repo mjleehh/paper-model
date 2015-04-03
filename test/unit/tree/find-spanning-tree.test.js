@@ -28,6 +28,7 @@ describe('findSpanningTree', function(){
                 children: []
             }],
             edges: [],
+            edgesInTree: [],
             rootNode: 0
         });
     });
