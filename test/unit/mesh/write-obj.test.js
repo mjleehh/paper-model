@@ -15,9 +15,8 @@ describe('writeObj', function(){
 
     it('writes a mesh', function(){
         var expectedResult = util.asciiResource('box-plain.obj');
-        var mesh = JSON.parse(
-            util.asciiResource('box.json'));
-        var objData = self.mesh.writeObj(mesh);
+        var objData = self.mesh.writeObj(
+            util.jsonResource('box.json'));
         expect(objData).to.be.eql(expectedResult);
     });
 });
