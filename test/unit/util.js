@@ -10,8 +10,14 @@ module.exports = function(dirname){
         jsonResource: function(name){
             return JSON.parse(fs.readFileSync(RESOURCES_DIR + name, {encoding: 'ascii'}));
         },
-        dump: function(filename, buffer){
+        dumpAscii: function(filename, buffer){
             fs.writeFileSync(dirname + '/' + filename, buffer);
+        },
+        dumpJson: function(filename, obj){
+            fs.writeFileSync(
+                dirname + '/' + filename,
+                JSON.stringify(obj, null, ' ')
+            );
         }
     };
 };

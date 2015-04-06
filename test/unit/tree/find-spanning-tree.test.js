@@ -46,4 +46,13 @@ describe('findSpanningTree', function(){
         var spanningTree = self.tree.findSpanningTree(graph);
         expect(spanningTree).to.be.eql(expectedResult);
     });
+
+    it('converts compmlex graphs', function(){
+        var expectedResult = util.jsonResource('complex.json');
+        var graph = new self.graph.Graph(
+            self.graph.readGraph(
+                util.asciiResource('complex.graph')));
+        var spanningTree = self.tree.findSpanningTree(graph);
+        expect(spanningTree).to.be.eql(expectedResult);
+    });
 });
