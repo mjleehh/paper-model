@@ -10,24 +10,24 @@ describe('findFundamentalCut', function(){
         var spanningTree = new self.tree.Tree(self.tree.readTree(
             util.asciiResource('spanning.tree')));
 
-        expect(self.graph.findFundamentalCut(graph, spanningTree, 10))
+        expect(self.graph.findFundamentalCut(spanningTree, 10))
             .to.contain(2)
             .to.contain(10)
             .to.contain(15)
             .to.contain(19);
 
-        expect(self.graph.findFundamentalCut(graph, spanningTree, 9))
+        expect(self.graph.findFundamentalCut(spanningTree, 9))
             .to.contain(2)
             .to.contain(9)
             .to.contain(14)
             .to.contain(19);
 
-        expect(self.graph.findFundamentalCut(graph, spanningTree, 6))
+        expect(self.graph.findFundamentalCut(spanningTree, 6))
             .to.contain(2)
             .to.contain(7)
             .to.contain(6);
 
-        expect(self.graph.findFundamentalCut(graph, spanningTree, 21))
+        expect(self.graph.findFundamentalCut(spanningTree, 21))
             .to.contain(21);
     });
 });
