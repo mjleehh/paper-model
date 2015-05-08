@@ -18,7 +18,7 @@ describe('findSpanningTree', function(){
             nodes: ['one'],
             edges: []
         });
-        var tree = self.spanningTrees.findSpanningTree(graph);
+        var tree = self.spanningTree.findSpanningTree(graph);
         expect(tree).to.be.eql({
             nodes: [{
                 value: 'one',
@@ -34,7 +34,7 @@ describe('findSpanningTree', function(){
             var graph = new self.graph.Graph(
                 self.graph.readGraph(
                     util.asciiResource('disconnected.graph')));
-            self.tree.findSpanningTree(graph);
+            self.spanningTree.findSpanningTree(graph);
         }).to.throw(Error);
     });
 
@@ -43,7 +43,7 @@ describe('findSpanningTree', function(){
         var graph = new self.graph.Graph(
             self.graph.readGraph(
                 util.asciiResource('cyclic.graph')));
-        var spanningTree = self.spanningTrees.findSpanningTree(graph);
+        var spanningTree = self.spanningTree.findSpanningTree(graph);
         expect(spanningTree).to.be.eql(expectedResult);
     });
 
@@ -52,7 +52,7 @@ describe('findSpanningTree', function(){
         var graph = new self.graph.Graph(
             self.graph.readGraph(
                 util.asciiResource('complex.graph')));
-        var spanningTree = self.spanningTrees.findSpanningTree(graph);
+        var spanningTree = self.spanningTree.findSpanningTree(graph);
         expect(spanningTree).to.be.eql(expectedResult);
     });
 });
