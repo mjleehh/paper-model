@@ -6,7 +6,7 @@ var util = require('../util')(__dirname);
 describe('traverseTree', function(){
     it('traverses all nodes in depth first order', function(){
         var expectedResult = ['one', 'two', 'five', 'six', 'three', 'four', 'seven', 'eight', 'nine'];
-        var tree = new self.tree.Tree(
+        var tree = new self.Tree(
                 self.tree.readTree(
                     util.asciiResource('simple.tree')));
 
@@ -20,7 +20,7 @@ describe('traverseTree', function(){
 
     it('can be stopped', function(){
         var expectedResult = ['one', 'two'];
-        var tree = new self.tree.Tree(
+        var tree = new self.Tree(
             self.tree.readTree(
                 util.asciiResource('simple.tree')));
 
@@ -38,7 +38,7 @@ describe('traverseTree', function(){
 
     it('can be stopped for every subtree', function(){
         var expectedResult = ['one', 'two', 'three', 'four', 'seven', 'eight', 'nine'];
-        var tree = new self.tree.Tree(
+        var tree = new self.Tree(
             self.tree.readTree(
                 util.asciiResource('simple.tree')));
 
@@ -49,6 +49,22 @@ describe('traverseTree', function(){
             if (value === 'two') {
                 self.tree.forEach.stopSubtree();
             }
+        });
+
+        expect(list).to.be.eql(expectedResult);
+    });
+
+    it('traverses complex trees', function(){
+        var expectedResult = ['one', 'two', 'four', 'six', 'five', 'three'];
+        var graph = new self.Graph(
+            self.graph.readGraph(
+                util.asciiResource('complex.graph')));
+        var tree = new self.Tree(
+            self.spanningTree.findSpanningTree(graph));
+
+        var list = [];
+        self.tree.forEach(tree, function(node){
+            list.push(node.value);
         });
 
         expect(list).to.be.eql(expectedResult);
