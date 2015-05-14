@@ -4,13 +4,16 @@ var util = require('../util')(__dirname);
 
 
 describe('findCut', function(){
-    it('unfolds a box', function(){
-        var graph = new self.graph.Graph(self.graph.readGraph(
+    it('can separate a graph through the edge of a spanning tree', function(){
+        var graph = new self.Graph(self.graph.readGraph(
             util.asciiResource('cutable.graph')));
-        var spanningTree = new self.tree.Tree(self.tree.readTree(
-            util.asciiResource('spanning.tree')));
+        util.dumpAscii('cutable.dot', self.graph.writeDot(graph));
 
-        expect(self.spanningTree.findCut(graph, 10))
+        var spanningTree = new self.Tree(self.tree.readTree(
+            util.asciiResource('spanning.tree')));
+        util.dumpAscii('cutable-tree.dot', self.tree.writeDot(spanningTree, true));
+
+        expect(self.spanningTree.findCut(spanningTree, 10))
             .to.contain(2)
             .to.contain(10)
             .to.contain(15)
@@ -29,5 +32,8 @@ describe('findCut', function(){
 
         expect(self.spanningTree.findCut(spanningTree, 21))
             .to.contain(21);
+
+        expect(self.spanningTree.findCut(spanningTree, 16))
+            .to.contain(16);
     });
 });

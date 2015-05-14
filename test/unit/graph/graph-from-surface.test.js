@@ -9,7 +9,7 @@ describe('graphFromSurface', function(){
             nodes: [],
             edges: []
         };
-        var surface = new self.surface.Surface({
+        var surface = new self.Surface({
             vertices: [],
             halfEdges: [],
             faces: []
@@ -36,7 +36,7 @@ describe('graphFromSurface', function(){
             ],
             edges: [[0, 1], [0, 2]]
         };
-        var surface = new self.surface.Surface(
+        var surface = new self.Surface(
             self.surface.readSurface(
                 util.asciiResource('l-patch-2.surface')));
         var graph = self.graph.graphFromSurface(surface);

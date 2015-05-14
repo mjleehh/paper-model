@@ -6,7 +6,7 @@ var util = require('../util')(__dirname);
 function getTestSurface(){
     var surfaceImpl = self.surface.readSurface(
         util.asciiResource('flat-square-donut.surface'));
-    return new self.surface.Surface(surfaceImpl);
+    return new self.Surface(surfaceImpl);
 }
 
 describe('Vertex', function(){

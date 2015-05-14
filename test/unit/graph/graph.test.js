@@ -4,7 +4,7 @@ var util = require('../util')(__dirname);
 
 
 function complexGraph(){
-    return new self.graph.Graph(self.graph.readGraph(
+    return new self.Graph(self.graph.readGraph(
         util.asciiResource('complex.graph')));
 }
 

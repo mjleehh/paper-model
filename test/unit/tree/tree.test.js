@@ -4,12 +4,12 @@ var util = require('../util')(__dirname);
 
 
 function simpleTree(){
-    return new self.tree.Tree(self.tree.readTree(
+    return new self.Tree(self.tree.readTree(
         util.asciiResource('simple.tree')));
 }
 
 function subgraphTree(){
-    return new self.tree.Tree(self.tree.readTree(
+    return new self.Tree(self.tree.readTree(
         util.asciiResource('subgraph.tree')));
 }
 

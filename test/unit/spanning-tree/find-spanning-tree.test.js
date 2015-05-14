@@ -6,7 +6,7 @@ var util = require('../util')(__dirname);
 describe('findSpanningTree', function(){
     it('fails if the graph is empty', function(){
         expect(function(){
-            var graph = new self.graph.Graph({
+            var graph = new self.Graph({
                 nodes: []
             });
             self.tree.findSpanningTree(graph);
@@ -14,7 +14,7 @@ describe('findSpanningTree', function(){
     });
 
     it('converts trivial graphs', function(){
-        var graph = new self.graph.Graph({
+        var graph = new self.Graph({
             nodes: ['one'],
             edges: []
         });
@@ -31,7 +31,7 @@ describe('findSpanningTree', function(){
 
     it('fails if graph has disconnected components', function(){
         expect(function(){
-            var graph = new self.graph.Graph(
+            var graph = new self.Graph(
                 self.graph.readGraph(
                     util.asciiResource('disconnected.graph')));
             self.spanningTree.findSpanningTree(graph);
@@ -40,7 +40,7 @@ describe('findSpanningTree', function(){
 
     it('converts cyclic graphs', function(){
         var expectedResult = util.jsonResource('cyclic.json');
-        var graph = new self.graph.Graph(
+        var graph = new self.Graph(
             self.graph.readGraph(
                 util.asciiResource('cyclic.graph')));
         var spanningTree = self.spanningTree.findSpanningTree(graph);
@@ -49,7 +49,7 @@ describe('findSpanningTree', function(){
 
     it('converts compmlex graphs', function(){
         var expectedResult = util.jsonResource('complex.json');
-        var graph = new self.graph.Graph(
+        var graph = new self.Graph(
             self.graph.readGraph(
                 util.asciiResource('complex.graph')));
         var spanningTree = self.spanningTree.findSpanningTree(graph);

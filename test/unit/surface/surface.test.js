@@ -4,7 +4,7 @@ var util = require('../util')(__dirname);
 
 
 function getTestSurface(){
-    return new self.surface.Surface(
+    return new self.Surface(
         self.surface.readSurface(
             util.asciiResource('l-patch-2.surface')));
 }
