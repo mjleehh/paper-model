@@ -5,9 +5,6 @@ var util = require('../util')(__dirname);
 
 describe('findCut', function(){
     it('can separate a graph through the edge of a spanning tree', function(){
-        var graph = new self.Graph(self.graph.readGraph(
-            util.asciiResource('cutable.graph')));
-
         var spanningTree = new self.Tree(self.tree.readTree(
             util.asciiResource('spanning.tree')));
 
