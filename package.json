@@ -20,6 +20,6 @@
   "dependencies": {
     "lodash": "~3.3.1",
     "simplesets": "~1.2.0",
-    "vecks": "git+ssh://git@github.com:bjnortier/vecks.git"
+    "vecks": "~1.4.1"
   }
 }
