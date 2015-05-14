@@ -7,11 +7,9 @@ describe('findCut', function(){
     it('can separate a graph through the edge of a spanning tree', function(){
         var graph = new self.Graph(self.graph.readGraph(
             util.asciiResource('cutable.graph')));
-        util.dumpAscii('cutable.dot', self.graph.writeDot(graph));
 
         var spanningTree = new self.Tree(self.tree.readTree(
             util.asciiResource('spanning.tree')));
-        util.dumpAscii('cutable-tree.dot', self.tree.writeDot(spanningTree, true));
 
         expect(self.spanningTree.findCut(spanningTree, 10))
             .to.contain(2)
