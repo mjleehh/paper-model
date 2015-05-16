@@ -18,7 +18,7 @@ function subgraphTree(){
 describe('TreeCache', function(){
     it('returns all edges as tree edges for tree graphs', function(){
         var treeCache = new TreeCache(simpleTree());
-        expect(treeCache.getTreeEdges()).to.be.eql([0, 1, 2, 3, 4, 5, 6, 7]);
+        expect(_.sortBy(treeCache.getTreeEdges())).to.be.eql([0, 1, 2, 3, 4, 5, 6, 7]);
     });
 
     it('returns no edges as non tree edges for tree graphs', function(){
@@ -28,8 +28,13 @@ describe('TreeCache', function(){
 
     it('returns tree and non tree edges for non tree graphs', function(){
         var treeCache = new TreeCache(subgraphTree());
-        expect(treeCache.getTreeEdges()).to.be.eql([0, 2, 3, 4, 8]);
+        expect(_.sortBy(treeCache.getTreeEdges())).to.be.eql([0, 2, 3, 4, 8]);
         expect(treeCache.getNonTreeEdges()).to.be.eql([1, 5, 6, 7]);
+    });
+
+    it('tree edges in depth first order', function(){
+        var treeCache = new TreeCache(subgraphTree());
+        expect(treeCache.getTreeEdges()).to.be.eql([3, 8, 0, 4, 2]);
     });
 
     it('returns disjunct sets for tree and non tree edges', function(){
